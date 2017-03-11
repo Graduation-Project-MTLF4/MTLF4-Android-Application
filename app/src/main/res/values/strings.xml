@@ -1,3 +1,51 @@
 <resources>
-    <string name="app_name">MTLF4 Android Application</string>
+    <string name="app_name">MTLF4</string>
+    <string name="title_activity_main">MTLF4 Android Application</string>
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+    <string name="action_settings">Settings</string>
+    <string name="text1">سجل الدخول علشان تقدر تستمتع بكل مزايا التطبيق و توصلك كل الاخبار و العروض و كمان تقدر تحتفظ بعروضك المفضلة على حسابك و ترجعلها فى أى وقت</string>
+    <string name="action_sign_in_short">تسجيل الدخول</string>
+    <string name="error_invalid_email">البريد الالكترونى خاطئ</string>
+    <string name="error_invalid_password">كلمة السر قصيرة</string>
+    <string name="error_incorrect_password">كلمة السر خطأ</string>
+    <string name="error_field_required">الحقل فارغ</string>
+    <string name="titlepost">عروض على الملابس الكاجوا</string>
+    <string name="postdetals">عند زيارتك الاولى للمحل ستحصل على خصومات تصل الى 2%</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="radio_male">زكر</string>
+    <string name="radio_female">أنثى</string>
+    <string name="shops">المتاجر</string>
+    <string name="mainHome">الرئيسية</string>
+    <string name="offers">العروض</string>
+    <string name="fav">حسابي</string>
+    <string name="notifications">التنبيهات</string>
+    <string name="favorite">المفضلة</string>
+    <string name="sagel_bianat">سجل بيانات شركتك</string>
+    <string name="sagel_bianat_wzawed">وزود مبيعاتك بالإنضمام لأكبر سوق مفتوح في مصر</string>
+    <string name="sagel_bianat_da5al">دخل بياناتك الصحيحة علشان العميل يقدر يوصلك بسهولة</string>
+    <string name="sagel_bianat_ldman">لضمان جودة التطبيق الرجاء ادخال بياناتك كاملة</string>
+    <string name="follow2">متابعة</string>
+    <string name="follow">متابعة</string>
+    <string name="dataowner">بيانات عن صاحب الشركة</string>
+    <string name="prompt_password">كلمة السر</string>
+    <string name="prompt_email">البريد الالكتروني</string>
+    <string name="firstname">الاسم الاول</string>
+    <string name="family">اسم العائلة</string>
+    <string name="date">تاريخ المييلاد</string>
+    <string name="number">الرقم القومي</string>
+    <string name="mobile">موبيل</string>
+    <string name="dataComp">بيانات عن الشركة</string>
+    <string name="nameC">اسم الشركة</string>
+    <string name="addressCom">عنوان الشركة</string>
+    <string name="detalCom">تفاصيل عن الشركة</string>
+    <string name="phone">موبيل</string>
+    <string name="addImageHere">أضف شعار شركتك هنا</string>
+    <string name="imageSigel">صورة السجل التجاري</string>
+    <string name="CreateAcountComp">أنشئ حساب الشركة</string>
+    <string name="thank">شكرآ لتسجيلك في أكبر سوق حقيقي في مصر , هانراجع بياناتك بسرعة ونبعتلك رسالة تأكيد علي الاميل بتاعك</string>
+    <string name="go_to_app">الذهاب الي التطبيق</string>
+    <string name="description">نقدم لكم اجود المنتجات بأقل الاسعار فى السوق المصرى</string>
 </resources>
