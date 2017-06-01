@@ -2,9 +2,13 @@ package amirahmed.com.mtlf4androidapplication;
 
 import android.annotation.TargetApi;
 import android.app.SearchManager;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -23,11 +27,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import amirahmed.com.mtlf4androidapplication.Activities.AddPost1;
+import amirahmed.com.mtlf4androidapplication.Activities.FavoritesActivity;
+import amirahmed.com.mtlf4androidapplication.Activities.MyProfileActivity;
+import amirahmed.com.mtlf4androidapplication.Activities.StatsticsActivity;
 import amirahmed.com.mtlf4androidapplication.Fragments.MainHomeFragment;
 import amirahmed.com.mtlf4androidapplication.Fragments.NavigationFragment;
 import amirahmed.com.mtlf4androidapplication.Fragments.PostsFragment;
@@ -45,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerC
     private ActionBarDrawerToggle mDrawerToggle;
 
 
+    ImageView img2;
+    TextView midname;
 
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
@@ -58,7 +69,36 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerC
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         mToolbar.setLogo(R.drawable.mainlogo);
 
+        midname = (TextView) findViewById(R.id.midname);
+        img2 = (ImageView) findViewById(R.id.imgcatenotification);
+
         getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext() , AddPost1.class);
+                startActivity(intent);
+            }
+        });
+
+        final SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        final String userID = (mypref.getString("KeyID","1"));
+
+
+        if(userID.equals("1"))
+        {
+            midname.setText("المفضلة");
+            img2.setImageResource(R.drawable.ic_favorite_black_24dp);
+            fab.setVisibility(View.GONE);
+        }else if (userID.equals("2"))
+        {
+            midname.setText("الاحصائيات");
+            img2.setImageResource(R.drawable.ic_timeline_black_24dp);
+            fab.setVisibility(View.VISIBLE);
+        }
 
 
         drawerFragment = (NavigationFragment) getFragmentManager().findFragmentById(R.id.fragment_drawer);
@@ -95,6 +135,32 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerC
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
+
+        ImageView img = (ImageView) findViewById(R.id.imgcateprofile);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this , MyProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        img2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(userID.equals("1"))
+                {
+                    Intent intent = new Intent(MainActivity.this , FavoritesActivity.class);
+                    startActivity(intent);
+                }else if(userID.equals("2"))
+                {
+                    Intent intent = new Intent(MainActivity.this , StatsticsActivity.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
 
     }
 
@@ -135,9 +201,11 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerC
             dl.closeDrawer(GravityCompat.START);
         else
         {
-            super.onBackPressed();
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         }
-
     }
 
 

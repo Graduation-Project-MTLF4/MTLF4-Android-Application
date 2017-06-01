@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import amirahmed.com.mtlf4androidapplication.Adapters.PostAdapter;
 import amirahmed.com.mtlf4androidapplication.Activities.FilterActivity;
 import amirahmed.com.mtlf4androidapplication.Models.PostItem;
 import amirahmed.com.mtlf4androidapplication.R;
+import amirahmed.com.mtlf4androidapplication.Utils.MyScrollListener;
 
 public class PostsFragment extends Fragment {
 
@@ -37,6 +39,8 @@ public class PostsFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        final LinearLayout linearLayout = (LinearLayout) getActivity().findViewById(R.id.linearlaycate);
 
         String[] items = new String[] {"ترتيب حسب الاسم", "ترتيب حسب التاريخ", "ترتيب حسب النوع","اختر الترتيب"};
         final int listsize = items.length -1;
@@ -69,6 +73,13 @@ public class PostsFragment extends Fragment {
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rvpost.setLayoutManager(llm);
+
+        rvpost.addOnScrollListener(new MyScrollListener(getContext()) {
+            @Override
+            public void onMoved(int distance) {
+                linearLayout.setTranslationY(distance);
+            }
+        });
 
         initializeData();
         initializeAdapter();

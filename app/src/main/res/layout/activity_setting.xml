@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_home_black_36dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="10dp"/>
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="اعدادات"/>
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الحساب"
+            android:textSize="25sp"
+            android:textColor="@color/myAccentColor"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="6dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded"
+        android:id="@+id/storelogo">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera_alt_white_36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/myDrawerBackground"
+            android:text="تعديل شعار المتجر"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/togglepic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft = "true"
+            android:src="@drawable/ic_keyboard_arrow_down_black_36dp"
+            android:layout_marginRight="95dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/changePicteur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zara"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تغير"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:background="@drawable/rounded_edit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded"
+        android:id="@+id/login">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_transfer_within_a_station_white_36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/myDrawerBackground"
+            android:text="اعدادات الدخول"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/togglelogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_down_black_36dp"
+            android:layout_marginRight="118dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loginsetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:visibility="gone">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="zara123"
+            android:background="@drawable/rounded_edit"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/ic_perm_identity_black_18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12349876"
+            android:background="@drawable/rounded_edit"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/ic_lock_outline_black_18dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded"
+        android:id="@+id/storedata">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_store_white_36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/myDrawerBackground"
+            android:text="تعديل بيانات المتجر"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/togglestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_down_black_36dp"
+            android:layout_marginRight="85dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/storesetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit"
+            android:text="زارا للملابس الجاهزة"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/ic_description_black_36dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ميدان العباسية"
+            android:background="@drawable/rounded_edit"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/ic_location_on_black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit"
+            android:text="@string/description"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/ic_favorite_black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded"
+        android:id="@+id/ownerdata">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_perm_identity_white_36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/myDrawerBackground"
+            android:text="تعديل بيانات صاحب المتجر"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/toggleowner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_down_black_36dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/personsetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit"
+            android:layout_margin="10dp"
+            android:text="010000000"
+            android:drawableRight="@drawable/ic_phone_black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit"
+            android:text="someone@gmail.com"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/ic_email_black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded"
+        android:id="@+id/connectdata">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_timeline_white_36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/myDrawerBackground"
+            android:text="اعدادات التواصل"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/toggleconnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_down_black_36dp"
+            android:layout_marginRight="110dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/connectionsetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit"
+            android:layout_margin="10dp"
+            android:text="010000000"
+            android:drawableRight="@drawable/ic_phone_black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit"
+            android:layout_margin="10dp"
+            android:text="someone@gmail.com"
+            android:drawableRight="@drawable/ic_email_black"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="حفظ التغيرات"
+        android:background="@drawable/rounded_edit"
+        android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

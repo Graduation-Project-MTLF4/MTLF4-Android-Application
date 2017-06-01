@@ -4,16 +4,20 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -29,12 +33,22 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import amirahmed.com.mtlf4androidapplication.MainActivity;
 import amirahmed.com.mtlf4androidapplication.R;
+import amirahmed.com.mtlf4androidapplication.Utils.RequestHandler;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -55,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-    private UserLoginTask mAuthTask = null;
+    //private UserLoginTask mAuthTask = null;
 
     // UI references.
     private TextView t1;
@@ -64,6 +78,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+
+    String url = "https://matlefesh.000webhostapp.com/mobile/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,16 +115,36 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
 
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
-            Intent i = new Intent(LoginActivity.this,MainActivity.class);
             @Override
             public void onClick(View view) {
+                if(isOnline()){
                 attemptLogin();
+            }else {showMessage("No Connection");}}
+        });
+
+        TextView intenttext = (TextView) findViewById(R.id.companybutton);
+        intenttext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext() , LoginCompany.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView newUser = (TextView) findViewById(R.id.newuserbutton);
+        newUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this,RegistrationActivity.class);
                 startActivity(i);
             }
         });
 
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+
     }
 
     private void populateAutoComplete() {
@@ -161,17 +197,78 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
-        if (mAuthTask != null) {
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences.Editor editor = preferences.edit();
+
+        /*if (mAuthTask != null) {
             return;
-        }
+        }*/
 
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        final String email = mEmailView.getText().toString().toLowerCase();
+        final String password = mPasswordView.getText().toString();
+
+        showProgress(true);
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                showProgress(false);
+
+                switch (response) {
+                    case "1":
+
+                        editor.putString("KeyID","1");
+                        editor.apply();
+
+                        Intent i = new Intent(LoginActivity.this,MainActivity.class);
+                        startActivity(i);
+                        showMessage("Login Successfully");
+
+
+
+                        break;
+                    case "2":
+                        showMessage("User Blocked By Admin");
+                        break;
+                    default:
+                        showMessage("Login Failed");
+
+                        break;
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                showMessage(error.getMessage());
+
+            }
+        }
+
+        ){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("mail", email);
+                params.put("pass", password);
+                params.put("encrpt","b423c44309864df74cff9674a990f62de9cd171f");
+                return params;
+            }
+        };
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+
+
 
         boolean cancel = false;
         View focusView = null;
@@ -194,7 +291,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
             cancel = true;
         }
 
-        if (cancel) {
+        /*if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
@@ -204,7 +301,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
-        }
+        }*/
     }
 
     private boolean isEmailValid(String email) {
@@ -311,7 +408,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    /*public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;
@@ -362,6 +459,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
             mAuthTask = null;
             showProgress(false);
         }
+    }*/
+
+    private void showMessage(String _s) {
+        Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+    }
+
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
+
 }
 

@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
 
-    <TextView
+    <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
         android:id="@+id/sahebsherka"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
 
 
             <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
+                android:id="@+id/firstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_person_black_24dp"
@@ -62,9 +62,32 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
+                    android:id="@+id/lastname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/family"
+                    android:inputType="textAutoComplete"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="#E6E5E0" />
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="اسم المستخدم"
                     android:inputType="textAutoComplete"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -84,7 +107,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView2"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
@@ -107,6 +130,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
+                    android:id="@+id/birthday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/date"
@@ -122,6 +146,33 @@
                 android:layout_gravity="center_vertical"
                 android:background="#E6E5E0" />
 
+            <RadioGroup
+                android:id="@+id/radioSex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_male"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_female"/>
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="#E6E5E0" />
 
             <android.support.design.widget.TextInputLayout
 
@@ -129,9 +180,32 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
+                    android:id="@+id/serial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/number"
+                    android:inputType="textAutoComplete"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="#E6E5E0" />
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="المدينة"
                     android:inputType="textAutoComplete"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -151,10 +225,11 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
+                    android:id="@+id/mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/mobile"
-                    android:inputType="textAutoComplete"
+                    android:inputType="phone"
                     android:maxLines="1"
                     android:singleLine="true" />
 

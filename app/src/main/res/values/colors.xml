@@ -15,6 +15,7 @@
     <color name="myPrimaryColor">#273236</color>
     <color name="myPrimaryDarkColor">#273236</color>
     <color name="myAccentColor">#2196F3</color>
+    <color name="facebookblue">#2196F3</color>
     <color name="myDrawerBackground">#FFF</color>
     <color name="myWindowBackground">#FFF</color>
     <color name="myTextPrimaryColor">#212121</color>

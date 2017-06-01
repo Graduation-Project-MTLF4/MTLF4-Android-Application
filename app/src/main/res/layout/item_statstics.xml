@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    xmlns:card_view="http://schemas.android.com/tools"
+                                    android:id="@+id/cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="@dimen/md_keylines"
+                                    android:layout_marginLeft="@dimen/md_keylines"
+                                    android:layout_marginRight="@dimen/md_keylines"
+                                    android:layout_marginTop="15dp"
+                                    app:cardElevation="8dp"
+                                    card_view:cardUseCompatPadding="true"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edit"
+        android:orientation="vertical">
+
+        <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="تصفيات الملابس الشتوى"
+            android:textDirection="rtl"
+            android:textStyle="bold"
+            android:textColor="@color/myNavigationColor"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layoutDirection="rtl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_av_timer_black_24dp"
+                android:layout_margin="5dp"/>
+
+
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/myNavigationColor"/>
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="فبراير"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/myNavigationColor"/>
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/myNavigationColor"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layoutDirection="rtl"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/like"
+                    android:layout_margin="5dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/heart"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عدد الاعجابات"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/myNavigationColor"/>
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="التفضيلات"
+                    android:layout_marginTop="32dp"
+                    android:textColor="@color/myNavigationColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:id="@+id/likes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/myDrawerBackground"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/rounded"
+                    android:text="3"
+                    android:textSize="12sp"
+                    android:layout_margin="5dp"/>
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:id="@+id/favorites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/myDrawerBackground"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/rounded"
+                    android:text="3"
+                    android:textSize="12sp"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@color/myAccentColor"
+                    android:layout_margin="5dp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@color/myAccentColor"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/view"
+                    android:layout_margin="5dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/comments"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="المشاهدات"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/myNavigationColor"/>
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="التعليقات"
+                    android:textColor="@color/myNavigationColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:id="@+id/views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/myDrawerBackground"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/rounded"
+                    android:text="5"
+                    android:textSize="12sp"
+                    android:layout_margin="5dp"/>
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:id="@+id/comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/myDrawerBackground"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/rounded"
+                    android:text="5"
+                    android:textSize="12sp"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

@@ -3,7 +3,7 @@
     <string name="title_activity_main">MTLF4 Android Application</string>
     <string name="drawer_open">Menu opened</string>
     <string name="drawer_close">Menu closed</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">اعدادات الحساب</string>
     <string name="text1">سجل الدخول علشان تقدر تستمتع بكل مزايا التطبيق و توصلك كل الاخبار و العروض و كمان تقدر تحتفظ بعروضك المفضلة على حسابك و ترجعلها فى أى وقت</string>
     <string name="action_sign_in_short">تسجيل الدخول</string>
     <string name="error_invalid_email">البريد الالكترونى خاطئ</string>
@@ -34,7 +34,7 @@
     <string name="prompt_email">البريد الالكتروني</string>
     <string name="firstname">الاسم الاول</string>
     <string name="family">اسم العائلة</string>
-    <string name="date">تاريخ المييلاد</string>
+    <string name="date">تاريخ الميلاد</string>
     <string name="number">الرقم القومي</string>
     <string name="mobile">موبيل</string>
     <string name="dataComp">بيانات عن الشركة</string>
@@ -48,4 +48,5 @@
     <string name="thank">شكرآ لتسجيلك في أكبر سوق حقيقي في مصر , هانراجع بياناتك بسرعة ونبعتلك رسالة تأكيد علي الاميل بتاعك</string>
     <string name="go_to_app">الذهاب الي التطبيق</string>
     <string name="description">نقدم لكم اجود المنتجات بأقل الاسعار فى السوق المصرى</string>
+    <string name="logout">تسجيل الخروج</string>
 </resources>

@@ -2,7 +2,9 @@ package amirahmed.com.mtlf4androidapplication.Fragments;
 
 
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -26,6 +28,7 @@ public class NavigationFragment extends Fragment {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
 
+    String user,company;
 
     //variables
     private RecyclerView mRecyclerView;
@@ -152,14 +155,29 @@ public class NavigationFragment extends Fragment {
 
 
     public void getGenres() {
+
+        final SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final String userID = (mypref.getString("KeyID","1"));
+
+        user = "المفضلة";
+        company = "الاحصائيات";
+
         parentLists = new ArrayList<>();
         //List<ChildList> artists = new ArrayList<>(3);
         List<ChildList> artists2 = new ArrayList<>(3);
         List<ChildList> artists3 = new ArrayList<>(3);
 
-        parentLists.add(new ParentList("تسجيل الدخول", null,R.color.trans));
-        parentLists.add(new ParentList("مستخدم جديد", null,R.color.trans));
+        if(userID.equals("1"))
+        {
+            parentLists.add(new ParentList(user, null,R.color.trans));
+
+        } else if(userID.equals("2"))
+        {
+            parentLists.add(new ParentList(company, null,R.color.trans));
+        }
+
         parentLists.add(new ParentList("حسابى", null,R.color.trans));
+        parentLists.add(new ParentList("تسجيل الخروج", null,R.color.trans));
         parentLists.add(new ParentList("الازياء الرجالى", artists2,R.drawable.man));
         parentLists.add(new ParentList("الازياء الحريمى", artists3,R.drawable.rsz_woman));
 

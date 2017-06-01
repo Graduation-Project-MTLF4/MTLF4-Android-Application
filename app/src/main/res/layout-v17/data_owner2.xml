@@ -56,13 +56,12 @@
         android:layout_gravity="center"
         android:background="@drawable/circle"
         android:gravity="center"
-
         android:padding="20dp">
 
 
         <ImageView
+            android:id="@+id/companylogo"
             android:layout_width="50dp"
-
             android:layout_height="50dp"
             android:src="@drawable/ic_local_see_black_24dp" />
     </RelativeLayout>
@@ -93,7 +92,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView3"
+                    android:id="@+id/companyname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_person_black_24dp"
@@ -117,7 +116,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView2"
+                    android:id="@+id/companyaddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_person_black_24dp"
@@ -142,7 +141,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView4"
+                    android:id="@+id/companydetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_person_black_24dp"
@@ -167,13 +166,35 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView5"
+                    android:id="@+id/companymobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_person_black_24dp"
                     android:hint="@string/phone"
-                    android:inputType="textAutoComplete"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="#E6E5E0" />
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/companyemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_person_black_24dp"
+                    android:hint="البريد الالكترونى"
+                    android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -186,47 +207,86 @@
                 android:background="#E6E5E0" />
 
 
-            <Spinner
-                android:id="@+id/simpleSpinner"
-
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true" />
-
-
-            <RelativeLayout
+            <LinearLayout
+                android:layoutDirection="rtl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/image_sigel"
-                android:padding="5dp">
+                android:orientation="vertical">
 
-                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text="@string/imageSigel"
-                    android:textSize="20dp"
-                    android:textStyle="bold">
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الازياء الرجالى"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/men"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الازياء الحريمى"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/women"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="اكسسوارات"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/access"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ازياء الاطفال"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/child"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الاحزية و الجلود"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/shoes"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="نظارات"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/glasses"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
 
-                </amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont>
-
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/ic_local_see_black_24dp" />
-
-            </RelativeLayout>
+            <EditText
+                android:id="@+id/recordedittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="اختار صورة السجل التجارى"
+                android:background="@drawable/image_sigel"
+                android:padding="5dp"
+                android:drawableLeft="@drawable/ic_local_see_black_24dp"/>
 
             <Button
-                android:id="@+id/follow_button3"
+                android:id="@+id/submitButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded"

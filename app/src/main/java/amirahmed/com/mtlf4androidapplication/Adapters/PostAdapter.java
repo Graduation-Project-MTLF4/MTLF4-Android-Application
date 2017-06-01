@@ -2,6 +2,8 @@ package amirahmed.com.mtlf4androidapplication.Adapters;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.like.LikeButton;
 
 import java.util.List;
 
@@ -24,6 +28,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         TextView Name;
         TextView Details;
         ImageView sharpPic;
+        LikeButton fav;
         Context context;
 
         PostViewHolder(View itemView) {
@@ -33,6 +38,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             Name = (TextView)itemView.findViewById(R.id.name);
             Details = (TextView)itemView.findViewById(R.id.details);
             sharpPic = (ImageView)itemView.findViewById(R.id.pic);
+            fav = (LikeButton)itemView.findViewById(R.id.star_button2);
+
+            final SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(context);
+            final String userID = (mypref.getString("KeyID","1"));
+
+            if (userID.equals("1"))
+            {
+                fav.setVisibility(View.VISIBLE);
+            } else if(userID.equals("2"))
+            {
+                fav.setVisibility(View.GONE);
+            }
 
         }
     }
@@ -57,10 +74,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     }
 
     @Override
-    public void onBindViewHolder(PostViewHolder sharpViewHolder, int i) {
-        sharpViewHolder.Name.setText(postItems.get(i).name);
-        sharpViewHolder.Details.setText(postItems.get(i).details);
-        sharpViewHolder.sharpPic.setImageResource(postItems.get(i).photoId);
+    public void onBindViewHolder(PostViewHolder postViewHolder, int i) {
+        postViewHolder.Name.setText(postItems.get(i).name);
+        postViewHolder.Details.setText(postItems.get(i).details);
+        postViewHolder.sharpPic.setImageResource(postItems.get(i).photoId);
     }
 
     @Override

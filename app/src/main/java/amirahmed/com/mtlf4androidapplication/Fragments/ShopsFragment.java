@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
 import amirahmed.com.mtlf4androidapplication.Adapters.ShopsListAdapter;
 import amirahmed.com.mtlf4androidapplication.Models.ShopItem;
 import amirahmed.com.mtlf4androidapplication.R;
+import amirahmed.com.mtlf4androidapplication.Utils.MyScrollListener;
 
 public class ShopsFragment extends Fragment {
 
@@ -33,6 +35,7 @@ public class ShopsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
 
+        final LinearLayout linearLayout = (LinearLayout) getActivity().findViewById(R.id.linearlaycate);
 
         rvshop = (RecyclerView) getActivity().findViewById(R.id.rvshop);
 
@@ -41,6 +44,13 @@ public class ShopsFragment extends Fragment {
         //LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rvshop.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         //rvshop.setLayoutManager(llm);
+
+        rvshop.addOnScrollListener(new MyScrollListener(getContext()) {
+            @Override
+            public void onMoved(int distance) {
+                linearLayout.setTranslationY(distance);
+            }
+        });
 
         initializeData();
         initializeAdapter();

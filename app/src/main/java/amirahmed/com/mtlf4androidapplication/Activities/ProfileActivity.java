@@ -1,9 +1,11 @@
 package amirahmed.com.mtlf4androidapplication.Activities;
 
 
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -39,11 +41,23 @@ public class ProfileActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        final SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        final String userID = (mypref.getString("KeyID","1"));
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        if(userID.equals("1"))
+        {
+            fab.setVisibility(View.VISIBLE);
+        } else if (userID.equals("2"))
+        {
+            fab.setVisibility(View.GONE);
+        }
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "شكرا لتفضيلك شركتنا", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "شكرا لمتابعتك شركتنا", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
