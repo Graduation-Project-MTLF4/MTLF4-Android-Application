@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import amirahmed.com.mtlf4androidapplication.Adapters.StatisticsAdapter;
 import amirahmed.com.mtlf4androidapplication.Models.StatisticsItem;
@@ -57,8 +58,14 @@ public class StatisticsFragment extends Fragment {
 
     private void initializeData() {
         statisticsItems = new ArrayList<>();
-        statisticsItems.add(new StatisticsItem("تصفيات الملابس الشتوى","5","5","5","5","5"));
-        statisticsItems.add(new StatisticsItem("تصفيات الملابس الشتوى","8","8","8","8","8"));
+        Random random = new Random();
+        int Low = 1;
+        int High = 10;
+        int total = High - Low;
+
+
+        statisticsItems.add(new StatisticsItem("تصفيات الملابس الشتوى",String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low))));
+        statisticsItems.add(new StatisticsItem("اجدد الملابس الصيفى متاحة الان",String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low)),String.valueOf(random.nextInt(total+Low))));
     }
 
     private void initializeAdapter() {

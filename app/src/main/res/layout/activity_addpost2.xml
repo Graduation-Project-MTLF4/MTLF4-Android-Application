@@ -59,6 +59,7 @@
             android:text="اسم المنتج"/>
 
         <EditText
+            android:id="@+id/productname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="اضف عنوانا مميذا للمنتج"
@@ -82,6 +83,7 @@
             android:text="وصف المنتج"/>
 
         <EditText
+            android:id="@+id/productdesc"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:hint="اضف وصفا دقيقا للمنتج"
@@ -105,9 +107,11 @@
             android:text="صورة المنتج"/>
 
         <EditText
+            android:id="@+id/productpic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="قم برفع الصورة الرئيسية"
+            android:editable="false"
             android:drawableLeft="@drawable/ic_photo_camera_black_36dp"
             android:background="@drawable/rounded_edit"
             android:layout_margin="10dp"/>
@@ -123,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="صورة تفصيلية"
+            android:editable="false"
             android:drawableLeft="@drawable/ic_photo_camera_black_36dp"
             android:background="@drawable/rounded_edit"
             android:layout_margin="10dp"
@@ -131,6 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="صورة تفصيلية"
+            android:editable="false"
             android:drawableLeft="@drawable/ic_photo_camera_black_36dp"
             android:background="@drawable/rounded_edit"
             android:layout_margin="10dp"
@@ -163,6 +169,7 @@
                 android:layout_marginTop="12dp">
 
                 <CheckBox
+                    android:id="@+id/size1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="S"
@@ -170,6 +177,7 @@
                     android:layout_marginTop="5dp"/>
 
                 <CheckBox
+                    android:id="@+id/size2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="M"
@@ -215,6 +223,7 @@
                 android:text="السعر"/>
 
             <EditText
+                android:id="@+id/price"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_edit"
@@ -238,6 +247,7 @@
                 android:text="الكمية المتاحة"/>
 
             <EditText
+                android:id="@+id/quantity"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_edit"

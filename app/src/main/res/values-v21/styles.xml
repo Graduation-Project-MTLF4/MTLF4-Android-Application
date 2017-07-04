@@ -27,4 +27,10 @@
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/cardview_dark_background</item>
+        <item name="colorControlActivated">@color/myAccentColor</item>
+    </style>
+
 </resources>

@@ -16,6 +16,7 @@ import java.util.List;
 import amirahmed.com.mtlf4androidapplication.Models.ShopItem;
 import amirahmed.com.mtlf4androidapplication.Activities.ProfileActivity;
 import amirahmed.com.mtlf4androidapplication.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ShopsListAdapter extends RecyclerView.Adapter<ShopsListAdapter.ShopsViewHolder> {
 
@@ -40,7 +41,9 @@ public class ShopsListAdapter extends RecyclerView.Adapter<ShopsListAdapter.Shop
 
     @Override
     public void onBindViewHolder(ShopsViewHolder holder, int position) {
-        holder.name.setText(shop.get(position).name);
+        holder.name.setText(shop.get(position).getName());
+        holder.number.setText(shop.get(position).getNumber());
+        holder.cr.setImageResource(shop.get(position).getPic());
     }
 
     @Override
@@ -52,6 +55,8 @@ public class ShopsListAdapter extends RecyclerView.Adapter<ShopsListAdapter.Shop
     public static class ShopsViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
         TextView name;
+        TextView number;
+        CircleImageView cr;
         Context context;
 
         public ShopsViewHolder(View itemView) {
@@ -59,6 +64,8 @@ public class ShopsListAdapter extends RecyclerView.Adapter<ShopsListAdapter.Shop
             context = itemView.getContext();
             cv = (CardView) itemView.findViewById(R.id.cv2);
             name = (TextView) itemView.findViewById(R.id.shopName);
+            number = (TextView) itemView.findViewById(R.id.takeem);
+            cr = (CircleImageView)itemView.findViewById(R.id.profile_image);
             Typeface type = Typeface.createFromAsset(itemView.getContext().getAssets(),"fonts/HacenTunisiaBold.ttf");
             name.setTypeface(type);
 

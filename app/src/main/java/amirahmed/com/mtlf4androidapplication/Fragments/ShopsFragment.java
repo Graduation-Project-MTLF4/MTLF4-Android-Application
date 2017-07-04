@@ -60,11 +60,12 @@ public class ShopsFragment extends Fragment {
     private void initializeData() {
 
         shop = new ArrayList<>();
-        shop.add(new ShopItem("زارا للملابس الجاهزة"));
-        shop.add(new ShopItem("شركة الملابس الحديثة"));
-        shop.add(new ShopItem("راضى لبواقى التصدير"));
-        shop.add(new ShopItem("اكسسوارات الاول"));
-        shop.add(new ShopItem("احزية العباسية"));
+        shop.add(new ShopItem("زارا للملابس الجاهزة",R.drawable.zara,"100"));
+        shop.add(new ShopItem("شركة الملابس الحديثة",R.drawable.wear,"206"));
+        shop.add(new ShopItem("محلات فاشون الحديثة" ,R.drawable.fasion,"45"));
+        shop.add(new ShopItem("المتحدة للملابس الجاهزة",R.drawable.aliop,"56"));
+        shop.add(new ShopItem("سلسلة محلات هولستر" ,R.drawable.holster,"277"));
+        shop.add(new ShopItem("احزية جاب" ,R.drawable.gap,"277"));
 
     }
 

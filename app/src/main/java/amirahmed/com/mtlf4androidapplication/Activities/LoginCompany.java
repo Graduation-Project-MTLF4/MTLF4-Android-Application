@@ -82,7 +82,12 @@ private void execution() {
 
                     switch (response) {
                         case "1":
-
+                            showMessage("Login Failed");
+                            break;
+                        case "2":
+                            showMessage("Blocked By Admin");
+                            break;
+                        default:
                             editor.putString("KeyID","2");
                             editor.apply();
 
@@ -91,12 +96,7 @@ private void execution() {
 
                             showMessage("Login Successfully");
                             break;
-                        case "2":
-                            showMessage("Blocked By Admin");
-                            break;
-                        default:
-                            showMessage("Login Failed");
-                            break;
+
                     }
                 }
             }, new Response.ErrorListener() {

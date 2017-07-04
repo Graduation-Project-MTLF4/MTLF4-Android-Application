@@ -32,4 +32,11 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
+    compile files('libs/Gson.jar')
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.kbeanie:multipicker:1.1.31@aar'
+    compile 'com.github.Mariovc:ImagePicker:1.1.1'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
+
+    apply plugin: 'realm-android'
 }

@@ -37,27 +37,6 @@ public class NavigationFragment extends Fragment {
 
 
 
-    //private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
-    //private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
-
-    //private boolean mUserLearnedDrawer;
-    //private int mCurrentSelectedPosition = 0;
-    //private boolean mFromSavedInstanceState;
-    //private View mFragmentContainerView;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        /*SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
-
-        if (savedInstanceState != null) {
-            mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
-            mFromSavedInstanceState = true;
-        }*/
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -82,8 +61,6 @@ public class NavigationFragment extends Fragment {
 
 
 
-
-
     public void setUpDrawer(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar) {
         mDrawerLayout = drawerLayout;
         mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
@@ -91,13 +68,7 @@ public class NavigationFragment extends Fragment {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 if (!isAdded()) return;
-                /*if (!mUserLearnedDrawer) {
-                    mUserLearnedDrawer = true;
-                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-                    sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
-                }
 
-               getActivity().invalidateOptionsMenu();*/
             }
 
             @Override
@@ -124,19 +95,6 @@ public class NavigationFragment extends Fragment {
             }
         });
 
-
-       /* if (!mUserLearnedDrawer && !mFromSavedInstanceState) {
-            mDrawerLayout.openDrawer(mFragmentContainerView);
-        }
-
-
-        mDrawerLayout.post(new Runnable() {
-            @Override
-            public void run() {
-                mDrawerToggle.syncState();
-            }
-        });*/
-
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
@@ -144,13 +102,6 @@ public class NavigationFragment extends Fragment {
 
         return mDrawerToggle;
     }
-
-    /*@Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        // Forward the new configuration the drawer toggle component.
-        mDrawerToggle.onConfigurationChanged(newConfig);
-    }*/
 
 
 

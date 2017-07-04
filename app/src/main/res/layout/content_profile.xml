@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/activity_horizontal_margin"
     android:padding="@dimen/activity_horizontal_margin"
+                                            android:background="@color/colorPrimaryDark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
@@ -20,7 +21,129 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:text="زارا للملابس الجاهزة"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:textColor="@color/myDrawerBackground"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/facebooknew"
+                android:background="@color/colorPrimaryDark"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/twitternew"
+                android:background="@color/colorPrimaryDark"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/googlenew"
+                android:background="@color/colorPrimaryDark"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/instanew"
+                android:background="@color/colorPrimaryDark"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+        <include layout="@layout/item_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.8"
+                    android:layout_gravity="center"
+                    android:textColor="@color/myDrawerBackground"
+                    android:textSize="20sp"/>
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="التقييم"
+                    android:layout_gravity="center"
+                    android:textColor="@color/myDrawerBackground"
+                    android:textSize="20sp"/>
+                
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="430"
+                    android:layout_gravity="center"
+                    android:textColor="@color/myDrawerBackground"
+                    android:textSize="20sp"/>
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="المتابعين"
+                    android:layout_gravity="center"
+                    android:textColor="@color/myDrawerBackground"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22"
+                    android:layout_gravity="center"
+                    android:textColor="@color/myDrawerBackground"
+                    android:textSize="20sp"/>
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عدد العروض"
+                    android:layout_gravity="center"
+                    android:textColor="@color/myDrawerBackground"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <include layout="@layout/item_divider" />
 
@@ -40,7 +163,7 @@
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:src="@drawable/ic_phone_black" />
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:id="@+id/tvNumber1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,9 +173,9 @@
                 android:layout_toRightOf="@id/ivContactItem1"
                 android:text="01000000000"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/myDrawerBackground" />
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvNumber1"
@@ -63,7 +186,7 @@
                 android:layout_toRightOf="@id/ivContactItem1"
                 android:text="الشخصى"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="#727272" />
+                android:textColor="@color/myDrawerBackground" />
 
 
         </RelativeLayout>
@@ -83,9 +206,10 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:src="@drawable/ic_phone_black"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                android:background="@color/myDrawerBackground"/>
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:id="@+id/tvNumber2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,9 +219,9 @@
                 android:layout_toRightOf="@id/ivContactItem2"
                 android:text="27239749"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/myDrawerBackground" />
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvNumber2"
@@ -108,7 +232,7 @@
                 android:layout_toRightOf="@id/ivContactItem2"
                 android:text="المحل"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="#727272" />
+                android:textColor="@color/myDrawerBackground" />
 
         </RelativeLayout>
 
@@ -128,9 +252,10 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:src="@drawable/ic_email_black" />
+                android:src="@drawable/ic_email_black"
+                android:background="@color/myDrawerBackground"/>
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:id="@+id/tvNumber3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,20 +265,20 @@
                 android:layout_toRightOf="@id/ivContactItem3"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="someone@gmail.com"
+                android:text="تخصص المتجر"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/myDrawerBackground" />
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvNumber3"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="8dp"
                 android:layout_toEndOf="@id/ivContactItem3"
-                android:text="البريد الالكترونى"
+                android:text="الازياء الرجالى / الازياء الحريمى"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="#727272"
+                android:textColor="@color/myDrawerBackground"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_toRightOf="@id/ivContactItem3" />
 
@@ -175,9 +300,10 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:src="@drawable/ic_location_on_black" />
+                android:src="@drawable/ic_location_on_black"
+                android:background="@color/myDrawerBackground"/>
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:id="@+id/tvNumber5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -189,10 +315,10 @@
                 android:maxLines="1"
                 android:text="شارع رقم خمسة المتفرع من شارع 7"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121"
+                android:textColor="@color/myDrawerBackground"
                 android:textDirection="rtl" />
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvNumber5"
@@ -203,7 +329,7 @@
                 android:layout_toRightOf="@id/ivContactItem5"
                 android:text="فرع السيدة زينب"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="#727272" />
+                android:textColor="@color/myDrawerBackground" />
 
         </RelativeLayout>
 
@@ -222,9 +348,10 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:src="@drawable/ic_email_black"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                android:background="@color/myDrawerBackground"/>
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:id="@+id/tvNumber6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -236,9 +363,9 @@
                 android:maxLines="1"
                 android:text="ميدان العباسية شارع 9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/myDrawerBackground" />
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvNumber6"
@@ -249,7 +376,7 @@
                 android:layout_toRightOf="@id/ivContactItem6"
                 android:text="فرع العباسية"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="#727272" />
+                android:textColor="@color/myDrawerBackground" />
 
         </RelativeLayout>
 
@@ -268,9 +395,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:src="@drawable/ic_favorite_black" />
+                android:src="@drawable/ic_favorite_black"
+                android:background="@color/myDrawerBackground"/>
 
-            <TextView
+            <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
                 android:id="@+id/tvNumber7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -279,7 +407,7 @@
                 android:ellipsize="end"
                 android:text="@string/description"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/myDrawerBackground" />
 
         </LinearLayout>
 

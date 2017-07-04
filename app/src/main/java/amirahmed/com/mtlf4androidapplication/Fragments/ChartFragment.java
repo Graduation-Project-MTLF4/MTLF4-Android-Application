@@ -15,6 +15,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import amirahmed.com.mtlf4androidapplication.R;
 
@@ -26,10 +27,6 @@ public class ChartFragment extends Fragment {
         //Empty Constrictor
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Nullable
     @Override
@@ -41,22 +38,26 @@ public class ChartFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        Random random = new Random();
+        int Low = 10;
+        int High = 100;
+        int total = High - Low;
 
         LineChart lineChart = (LineChart) getActivity().findViewById(R.id.chart);
 
         ArrayList<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(60f, 0));
-        entries.add(new Entry(100f, 1));
-        entries.add(new Entry(125f, 2));
-        entries.add(new Entry(80f, 3));
-        entries.add(new Entry(77f, 4));
-        entries.add(new Entry(102f, 5));
-        entries.add(new Entry(58f, 6));
-        entries.add(new Entry(57f, 7));
-        entries.add(new Entry(35f, 8));
-        entries.add(new Entry(40f, 9));
-        entries.add(new Entry(30f, 10));
-        entries.add(new Entry(58f, 11));
+        entries.add(new Entry(random.nextInt(total+Low), 0));
+        entries.add(new Entry(random.nextInt(total+Low), 1));
+        entries.add(new Entry(random.nextInt(total+Low), 2));
+        entries.add(new Entry(random.nextInt(total+Low), 3));
+        entries.add(new Entry(random.nextInt(total+Low), 4));
+        entries.add(new Entry(random.nextInt(total+Low), 5));
+        entries.add(new Entry(random.nextInt(total+Low), 6));
+        entries.add(new Entry(random.nextInt(total+Low), 7));
+        entries.add(new Entry(random.nextInt(total+Low), 8));
+        entries.add(new Entry(random.nextInt(total+Low), 9));
+        entries.add(new Entry(random.nextInt(total+Low), 10));
+        entries.add(new Entry(random.nextInt(total+Low), 11));
 
 
         LineDataSet dataset = new LineDataSet(entries, "مجموع عدد الاعلانات");
@@ -90,18 +91,18 @@ public class ChartFragment extends Fragment {
         LineChart lineChart2 = (LineChart) getActivity().findViewById(R.id.chart2);
 
         ArrayList<Entry> entries2 = new ArrayList<>();
-        entries2.add(new Entry(60f, 0));
-        entries2.add(new Entry(100f, 1));
-        entries2.add(new Entry(125f, 2));
-        entries2.add(new Entry(80f, 3));
-        entries2.add(new Entry(77f, 4));
-        entries2.add(new Entry(102f, 5));
-        entries2.add(new Entry(58f, 6));
-        entries2.add(new Entry(57f, 7));
-        entries2.add(new Entry(35f, 8));
-        entries2.add(new Entry(40f, 9));
-        entries2.add(new Entry(30f, 10));
-        entries2.add(new Entry(58f, 11));
+        entries2.add(new Entry(random.nextInt(total+Low), 0));
+        entries2.add(new Entry(random.nextInt(total+Low), 1));
+        entries2.add(new Entry(random.nextInt(total+Low), 2));
+        entries2.add(new Entry(random.nextInt(total+Low), 3));
+        entries2.add(new Entry(random.nextInt(total+Low), 4));
+        entries2.add(new Entry(random.nextInt(total+Low), 5));
+        entries2.add(new Entry(random.nextInt(total+Low), 6));
+        entries2.add(new Entry(random.nextInt(total+Low), 7));
+        entries2.add(new Entry(random.nextInt(total+Low), 8));
+        entries2.add(new Entry(random.nextInt(total+Low), 9));
+        entries2.add(new Entry(random.nextInt(total+Low), 10));
+        entries2.add(new Entry(random.nextInt(total+Low), 11));
 
 
         LineDataSet dataset2 = new LineDataSet(entries2, "مجموع عدد المشاهدات / التعليقات");

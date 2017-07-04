@@ -32,11 +32,43 @@
                 android:layout_width="wrap_content"
                 android:textSize="13sp"
                 android:text="Sample"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:fontFamily="@string/abc_action_bar_home_description"
                 android:id="@+id/shopName"
                 android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal">
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عدد التقيمات :"/>
+
+                <amirahmed.com.mtlf4androidapplication.Utils.TextViewWithFont
+                    android:id="@+id/takeem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="109"/>
+
+            </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/indicator_ratingbar"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:numStars="4"
+                android:rating="1.5"/>
 
         </LinearLayout>
 
