@@ -49,20 +49,20 @@ public class PostsFragment extends Fragment {
 
         TinyDB tinydb = new TinyDB(getContext());
 
-        count = tinydb.getString("count");
+        //count = tinydb.getString("count");
 
-        countPlus = Integer.parseInt(count)+1;
+        //countPlus = Integer.parseInt(count)+1;
 
-        countDisplay = String.valueOf(countPlus);
+        //countDisplay = String.valueOf(countPlus);
 
-        tinydb.putString("count",countDisplay);
+        //tinydb.putString("count",countDisplay);
 
 
-        final LinearLayout linearLayout = (LinearLayout) getActivity().findViewById(R.id.linearlaycate);
+        final LinearLayout linearLayout = getActivity().findViewById(R.id.linearlaycate);
 
         String[] items = new String[] {"ترتيب حسب الاسم", "ترتيب حسب التاريخ", "ترتيب حسب النوع","اختر الترتيب"};
         final int listsize = items.length -1;
-        Spinner spinner = (Spinner)getActivity().findViewById(R.id.sorting);
+        Spinner spinner = getActivity().findViewById(R.id.sorting);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, items)
         {
             @Override
@@ -75,7 +75,7 @@ public class PostsFragment extends Fragment {
         spinner.setAdapter(dataAdapter);
         spinner.setSelection(listsize);
 
-        ImageView filter = (ImageView) getActivity().findViewById(R.id.filter);
+        ImageView filter = getActivity().findViewById(R.id.filter);
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +85,7 @@ public class PostsFragment extends Fragment {
         });
 
 
-        rvpost = (RecyclerView)getActivity().findViewById(R.id.rvpost);
+        rvpost = getActivity().findViewById(R.id.rvpost);
 
         rvpost.setHasFixedSize(true);
 

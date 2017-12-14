@@ -36,20 +36,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import amirahmed.com.mtlf4androidapplication.MainActivity;
 import amirahmed.com.mtlf4androidapplication.R;
-import amirahmed.com.mtlf4androidapplication.Utils.RequestHandler;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -80,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
     private View mProgressView;
     private View mLoginFormView;
 
-    String url = "https://matlefesh.000webhostapp.com/mobile/login.php";
+    //String url = "https://matlefesh.000webhostapp.com/mobile/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -234,7 +225,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
 
         showProgress(true);
 
-        StringRequest stringRequest = new StringRequest(
+        Intent i = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(i);
+        showMessage("Login Successfully");
+
+        editor.putString("KeyID","1");
+        editor.apply();
+
+        /*StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
@@ -287,7 +285,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
 
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
-
+*/
 
         boolean cancel = false;
         View focusView = null;

@@ -42,14 +42,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         PostViewHolder(View itemView) {
             super(itemView);
-            cv20 = (CardView)itemView.findViewById(R.id.cv);
+            cv20 = itemView.findViewById(R.id.cv);
             context = itemView.getContext();
-            Name = (TextView)itemView.findViewById(R.id.name);
-            Details = (TextView)itemView.findViewById(R.id.details);
-            viewsnumber = (TextView)itemView.findViewById(R.id.viewsnumber);
-            sharpPic = (ImageView)itemView.findViewById(R.id.pic);
-            like = (LikeButton)itemView.findViewById(R.id.star_button);
-            fav = (LikeButton)itemView.findViewById(R.id.star_button2);
+            Name = itemView.findViewById(R.id.name);
+            Details = itemView.findViewById(R.id.details);
+            viewsnumber = itemView.findViewById(R.id.viewsnumber);
+            sharpPic = itemView.findViewById(R.id.pic);
+            like = itemView.findViewById(R.id.star_button);
+            fav = itemView.findViewById(R.id.star_button2);
 
             final SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(context);
             final String userID = (mypref.getString("KeyID","1"));
